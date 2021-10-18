@@ -1,7 +1,7 @@
 
 package C3Reto3.Reto3v2.controlador;
 
-import C3Reto3.Reto3v2.modelo.Games;
+import C3Reto3.Reto3v2.modelo.Game;
 import C3Reto3.Reto3v2.servicios.ServiciosGames;
 import java.util.List;
 import java.util.Optional;
@@ -27,23 +27,23 @@ public class ControladorGames {
     @Autowired
     private ServiciosGames servicio;
     @GetMapping("/all")
-    public List<Games> getGames(){
+    public List<Game> getGames(){
         return servicio.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Games> getGames(@PathVariable("id") int gamesId) {
+    public Optional<Game> getGames(@PathVariable("id") int gamesId) {
         return servicio.getGames(gamesId);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Games save(@RequestBody Games games) {
+    public Game save(@RequestBody Game games) {
         return servicio.save(games);
     }
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Games update(@RequestBody Games games) {
+    public Game update(@RequestBody Game games) {
         return servicio.update(games);
     }
 

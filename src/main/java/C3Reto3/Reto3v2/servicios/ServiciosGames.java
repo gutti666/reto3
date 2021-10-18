@@ -1,7 +1,7 @@
 
 package C3Reto3.Reto3v2.servicios;
 
-import C3Reto3.Reto3v2.modelo.Games;
+import C3Reto3.Reto3v2.modelo.Game;
 import C3Reto3.Reto3v2.repositorio.RepositorioGames;
 import java.util.List;
 import java.util.Optional;
@@ -13,19 +13,19 @@ public class ServiciosGames {
     @Autowired
     private RepositorioGames metodosCrud;
     
-    public List<Games> getAll(){
+    public List<Game> getAll(){
          return metodosCrud.getAll();
     }
     
-    public Optional<Games> getGames(int gamesId){
+    public Optional<Game> getGames(int gamesId){
         return metodosCrud.getGames(gamesId);
     }
         
-    public Games save(Games games){
+    public Game save(Game games){
         if(games.getId()==null){
             return metodosCrud.save(games);
         }else{
-            Optional<Games> e=metodosCrud.getGames(games.getId());
+            Optional<Game> e=metodosCrud.getGames(games.getId());
             if(e.isEmpty()){
                 return metodosCrud.save(games);
             }else{
@@ -34,9 +34,9 @@ public class ServiciosGames {
         }
     }
 
-    public Games update(Games games){
+    public Game update(Game games){
         if(games.getId()!=null){
-            Optional<Games> e=metodosCrud.getGames(games.getId());
+            Optional<Game> e=metodosCrud.getGames(games.getId());
             if(!e.isEmpty()){
                 if(games.getName()!=null){
                     e.get().setName(games.getName());

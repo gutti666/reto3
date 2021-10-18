@@ -24,7 +24,7 @@ public class Categoria implements Serializable {
      
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy="category")
     @JsonIgnoreProperties("category")
-    private List<Games> games;
+    private List<Game> games;
     
     //A PARTIR DE AQUI CREAMOS LOS METODOS GET AND SET
 
@@ -52,17 +52,14 @@ public class Categoria implements Serializable {
         this.description = description;
     }
 
-    public List<Games> getGames() {
+    public List<Game> getGames() {
         return games;
     }
 
-    public void setGames(List<Games> games) {
+    public void setGames(List<Game> games) {
         this.games = games;
     }
 
-    
-    
-    
     
 }
      

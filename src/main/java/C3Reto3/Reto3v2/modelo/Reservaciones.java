@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @Table(name = "reservation")
 public class Reservaciones implements Serializable  {
     
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
     private Date startDate;
@@ -30,7 +30,7 @@ public class Reservaciones implements Serializable  {
     @ManyToOne
     @JoinColumn(name = "id")
     @JsonIgnoreProperties("reservations")
-    private Games games;
+    private Game game;
 
     @ManyToOne
     @JoinColumn(name = "idClient")
@@ -71,12 +71,12 @@ public class Reservaciones implements Serializable  {
         this.status = status;
     }
 
-    public Games getGames() {
-        return games;
+    public Game getGame() {
+        return game;
     }
 
-    public void setGames(Games games) {
-        this.games = games;
+    public void setGame(Game game) {
+        this.game = game;
     }
 
     public Cliente getClient() {
@@ -94,7 +94,6 @@ public class Reservaciones implements Serializable  {
     public void setScore(String score) {
         this.score = score;
     }
-    
-    
+
     
 }
