@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.5</version>
+		<version>2.5.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>C3Reto3</groupId>
-	<artifactId>Reto3v2</artifactId>
+	<groupId>Tutoria</groupId>
+	<artifactId>Tutoria</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Reto3v2</name>
+	<name>Tutoria</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
